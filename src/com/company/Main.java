@@ -7,8 +7,9 @@ public class Main {
     public static void main(String[] args) {
         Menu Menu = new Menu();
         Scanner scanner = new Scanner(System.in);
-        menu();
+
         while (true) {
+            menu();
             String userResponse = scanner.nextLine();
             if (userResponse.equals("1")) {
                 Menu.PlayerTurn2(scanner);
@@ -26,5 +27,6 @@ public class Main {
         System.out.println("Вы хотите сыграть в игру?");
         System.out.println("1 - играть, 2 - выйти.");
     }
+
 }
 
