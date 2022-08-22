@@ -1,6 +1,5 @@
 package com.company;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Menu {
@@ -8,6 +7,7 @@ public class Menu {
     public void PlayerTurn2(Scanner scanner) {
         Win win = new Win();
         CheckSymbol checkSymbol = new CheckSymbol();
+        OutPut outPut = new OutPut();
         String[][] array = new String[3][3];
         FillingArray.fillingArray(array);                                          // заполнение пустого массива точками
         OUTER:
@@ -25,12 +25,14 @@ public class Menu {
                 }
                 if ((array[Integer.parseInt(PlayerOne1) - 1][Integer.parseInt(PlayerOne2) - 1].equals("."))) {
                     array[Integer.parseInt(PlayerOne1) - 1][Integer.parseInt(PlayerOne2) - 1] = "x";    //проверка клетки и установка
-                    System.out.println(Arrays.deepToString(array));
+                  //  System.out.println(Arrays.deepToString(array));
+                    outPut.outPut(array);
                     if (win.winСonditions(array)){
                         break OUTER;}//проверка на победу игрока
                     break;
                 } else {
                     System.out.println("Клетка занята, введите номер клетки снова");
+                    outPut.outPut(array);
                     continue;
                 }
             }
@@ -50,27 +52,18 @@ public class Menu {
 
                 if (array[Integer.parseInt(PlayerTwo1) - 1][Integer.parseInt(PlayerTwo2) - 1].equals(".")) {
                     array[Integer.parseInt(PlayerTwo1) - 1][Integer.parseInt(PlayerTwo2) - 1] = "0";
-                    System.out.println(Arrays.deepToString(array));
+                    //System.out.println(Arrays.deepToString(array));
+                    outPut.outPut(array);
                     if (win.winСonditions(array)){
                         break OUTER;}
                     break;
 
                 } else {
                     System.out.println("Клетка занята, введите номер клетки снова");
+                    outPut.outPut(array);
                     continue;
                 }
             }
         }
     }
-
-
 }
-
-
-
-
-
-
-
-
-
