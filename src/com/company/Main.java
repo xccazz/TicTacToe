@@ -5,15 +5,15 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Menu Menu = new Menu();
+        Menu menu = new Menu();
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
             menu();
             String userResponse = scanner.nextLine();
-            if (userResponse.equals("1")) {
-                Menu.PlayerTurn2(scanner);
-            } else if (userResponse.equals("2")) {
+            if ("1".equals(userResponse)) {
+                menu.playerTurn2(scanner);
+            } else if ("2".equals(userResponse)) {
                 System.out.println("Выход.");
                 break;
             } else {
@@ -22,7 +22,6 @@ public class Main {
             }
         }
     }
-
     public static void menu() {
         System.out.println("Вы хотите сыграть в игру?");
         System.out.println("1 - играть, 2 - выйти.");
